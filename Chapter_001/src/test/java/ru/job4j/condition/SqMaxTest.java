@@ -8,15 +8,15 @@ public class SqMaxTest {
     @Test
     public void Max1() {
         SqMax check = new SqMax();
-        int result = check.max(2, 1, 8, 5);
-        assertThat(result, is(8));
+        int result = check.max(5, 3, 2, 1);
+        assertThat(result, is(5));
     }
 
     @Test
     public void Max2() {
         SqMax check = new SqMax();
-        int result = check.max(2, 1, 7, 9);
-        assertThat(result, is(9));
+        int result = check.max(2, 1, 8, 9);
+        assertThat(result, is(8));
     }
 
     @Test
