@@ -22,7 +22,7 @@ public class CheckTest {
     }
 
     @Test
-    public void Test1() {
+    public void test1() {
         Check check = new Check();
         boolean[] input = new boolean[] {true, true, true, true, true, false};
         boolean result = check.mono(input);

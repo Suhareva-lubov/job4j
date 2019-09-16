@@ -11,8 +11,8 @@ public class CounterTest {
     @Test
     public void whenSumEvenNumbersFromOneToTenThenThirty() {
         //напишите здесь тест, проверяющий, что сумма чётных чисел от 1 до 10 при вызове метода counter.add будет равна 30.
-        Counter Test1 = new Counter ();
-        int result = Test1.add(1,10);
+        Counter test1 = new Counter();
+        int result = test1.add(1, 10);
         assertThat(result, is(30));
 
     }
@@ -20,8 +20,8 @@ public class CounterTest {
     @Test
     public void whenSumEvenNumbersFromOneToTenThenThirty2() {
         //напишите здесь тест, проверяющий, что сумма чётных чисел от 1 до 10 при вызове метода counter.add будет равна 30.
-        Counter Test1 = new Counter ();
-        int result = Test1.add(2,12);
+        Counter test1 = new Counter();
+        int result = test1.add(2, 12);
         assertThat(result, is(42));
 
     }

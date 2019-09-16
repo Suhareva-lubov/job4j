@@ -17,7 +17,7 @@ public class MatrixCheck {
                                 }
                             }
 
-                            if (row > 0 && cell==0) {
+                            if (row > 0 && cell == 0) {
                                 if (sign != board[row][k]) {
                                     result = false;
                                     break;

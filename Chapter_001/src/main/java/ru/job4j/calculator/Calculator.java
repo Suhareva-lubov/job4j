@@ -15,8 +15,8 @@ public class Calculator {
      * @param second второй аргумент
      * @return результат сложения
      */
-    public static void add (double first, double second){
-        double result = first+second;
+    public static void add(double first, double second) {
+        double result = first + second;
         System.out.println(first + "+" + second + "=" + result);
     }
 
@@ -27,8 +27,8 @@ public class Calculator {
      * @return результат деления
      */
 
-    public static void div (double first, double second){
-        double result = first/second;
+    public static void div(double first, double second) {
+        double result = first / second;
         System.out.println(first + "/" + second + "=" + result);
     }
 
@@ -38,8 +38,8 @@ public class Calculator {
      * @param second второй аргумент
      * @return результат сложения
      */
-    public static void multiply (double first, double second){
-        double result = first*second;
+    public static void multiply(double first, double second) {
+        double result = first * second;
         System.out.println(first + "*" + second + "=" + result);
     }
 
@@ -49,8 +49,8 @@ public class Calculator {
      * @param second второй аргумент
      * @return результат вычитания
      */
-    public static void subtrack (double first, double second){
-        double result = first-second;
+    public static void subtrack(double first, double second) {
+        double result = first - second;
         System.out.println(first + "-" + second + "=" + result);
     }
 
@@ -59,11 +59,11 @@ public class Calculator {
      * @param args - args.
      */
 
-    public static void main (String[] args){
-        add(1,1);
-        div(4,2);
-        multiply(2,1);
-        subtrack(10,5);
+    public static void main(String[] args) {
+        add(1, 1);
+        div(4, 2);
+        multiply(2, 1);
+        subtrack(10, 5);
     }
 
 }

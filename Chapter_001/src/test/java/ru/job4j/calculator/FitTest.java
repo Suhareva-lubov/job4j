@@ -6,20 +6,20 @@ import org.junit.Test;
 public class FitTest {
 
     @Test
-    public void WomanWeight (){
+    public void womanWeight() {
 
         double in = 168.0;
-        double expected = 66.69 ;
-        double out = Fit.WomanWeight(in);
-        Assert.assertEquals (expected, out, 0.01); //delta до какой цифры после точки сравнивать
+        double expected = 66.69;
+        double out = Fit.womanWeight(in);
+        Assert.assertEquals(expected, out, 0.01); //delta до какой цифры после точки сравнивать
     }
 
     @Test
-    public void ManWeight(){
+    public void manWeight() {
 
         double in = 178;
         double expected = 89.7;
-        double out = Fit.ManWeight(in);
-        Assert.assertEquals (expected, out, 0.1);
+        double out = Fit.manWeight(in);
+        Assert.assertEquals(expected, out, 0.1);
     }
 }
