@@ -9,7 +9,6 @@ public class Mortgage {
             dolg = dolg - payYear;
             year++;
         }
-
         return year;
     }
 }

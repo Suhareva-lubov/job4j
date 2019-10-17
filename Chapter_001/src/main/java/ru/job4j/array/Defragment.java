@@ -5,8 +5,6 @@ public class Defragment {
         for (int index = 0; index < array.length; index++) {
             String cell = array[index];
             if (cell == null) {
-                // переместить первую не null ячейку
-                // Здесь нужен цикл while
                for (int i = index; i < array.length; i++) {
                    if (i == (array.length - 1)) {
                       array [i] = null;

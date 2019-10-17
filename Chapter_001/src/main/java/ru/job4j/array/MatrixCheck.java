@@ -7,27 +7,23 @@ public class MatrixCheck {
             for (int cell = 0; cell < board.length; cell++) {
                 char sign = board[row][cell];
                 System.out.print(sign);
-                //for () { проверить последовательность.
-                    if (sign == 'X') {
-                        for (int k = 1; k < board.length; k++) {
-                            if (cell > 0 && row == 0) {
-                                if (sign != board[k][cell]) {
-                                    result = false;
-                                    break;
-                                }
+                if (sign == 'X') {
+                    for (int k = 1; k < board.length; k++) {
+                        if (cell > 0 && row == 0) {
+                            if (sign != board[k][cell]) {
+                                result = false;
+                                break;
                             }
-
-                            if (row > 0 && cell == 0) {
-                                if (sign != board[row][k]) {
-                                    result = false;
-                                    break;
-                                }
+                        }
+                        if (row > 0 && cell == 0) {
+                            if (sign != board[row][k]) {
+                                result = false;
+                                break;
                             }
                         }
                     }
-
+                }
             }
-
             System.out.println();
         }
         return result;
