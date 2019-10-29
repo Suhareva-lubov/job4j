@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 public class Arr {
-    public int[] sort (int[] left, int[] right) {
+    public int[] sort(int[] left, int[] right) {
         int index = 0;
         for (int i = 0; i < left.length; i++) {
             for (int k = 0; k < right.length; k++) {

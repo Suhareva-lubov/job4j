@@ -1,7 +1,7 @@
 package ru.job4j.oop.profession;
 
 public class Therapist extends Doctor {
-    public int Temperature() {
+    public int temperature() {
         return temperature;
     }
 

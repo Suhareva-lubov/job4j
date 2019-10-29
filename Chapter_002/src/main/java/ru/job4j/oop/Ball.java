@@ -4,7 +4,7 @@ public class Ball {
     public void tryEat(Ball ball) {
 
     }
-    public void move () {
+    public void move() {
         System.out.println("Колобок катится");
     }
 }

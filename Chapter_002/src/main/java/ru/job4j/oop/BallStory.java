@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
 public class BallStory {
-    public void finish () {
+    public void finish() {
         System.out.println("Конец сказки.");
     }
 

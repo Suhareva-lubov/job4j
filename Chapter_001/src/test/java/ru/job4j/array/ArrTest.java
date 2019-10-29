@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 
 public class ArrTest {
     @Test
-    public void when2 () {
+    public void when2() {
         Arr rsl = new Arr();
         int[] expect = {2, 3};
         int[] result = rsl.sort(

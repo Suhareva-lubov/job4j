@@ -3,12 +3,12 @@ package ru.job4j.oop.profession;
 public class Doctor extends Profession {
     int qualification;
 
-    public Analyses osmotr (Complaint complaint) {
+    public Analyses osmotr(Complaint complaint) {
 
         return analyses;
     }
 
-    public Diagnosis diagnosis (Complaint complaint, Analyses analyses) {
+    public Diagnosis diagnosis(Complaint complaint, Analyses analyses) {
 
         return diagnos;
     }

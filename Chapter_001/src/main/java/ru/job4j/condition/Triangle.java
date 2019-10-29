@@ -47,13 +47,13 @@ public class Triangle {
 
     public double area(Point a, Point b, Point c) {
         double rsl = -1;
-        double storona_a = a.distance(b);
-        double storona_b = b.distance(c);
-        double storona_c = a.distance(c);
+        double storonaA = a.distance(b);
+        double storonaB = b.distance(c);
+        double storonaC = a.distance(c);
 
-        double p = period(storona_a, storona_b, storona_c);
-        if (this.exist(storona_a, storona_b, storona_c)) {
-            rsl = Math.sqrt(p * (p - storona_a) * (p - storona_b) * (p - storona_c));
+        double p = period(storonaA, storonaB, storonaC);
+        if (this.exist(storonaA, storonaB, storonaC)) {
+            rsl = Math.sqrt(p * (p - storonaA) * (p - storonaB) * (p - storonaC));
         }
         return rsl;
     }
