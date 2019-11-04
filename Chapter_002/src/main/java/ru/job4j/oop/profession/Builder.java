@@ -1,7 +1,7 @@
 package ru.job4j.oop.profession;
 
 public class Builder extends Engineer {
-    int category;
+    /*int category;
     String health;
 
     public House building(Bricks bricks, Cement cement) {
@@ -10,5 +10,5 @@ public class Builder extends Engineer {
 
     public int salary(Builder builder) {
         return salary;
-    }
+    }*/
 }

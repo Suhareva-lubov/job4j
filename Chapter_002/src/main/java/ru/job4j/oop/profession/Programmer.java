@@ -4,7 +4,7 @@ public class Programmer extends Engineer {
     String level;
     int practice;
 
-    public Code writeCode() {
+  /*  public Code writeCode() {
         return code;
     }
 
@@ -14,5 +14,5 @@ public class Programmer extends Engineer {
 
     public int salary(Programmer programmer) {
         return salary;
-    }
+    }*/
 }
