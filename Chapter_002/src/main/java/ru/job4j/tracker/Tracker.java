@@ -43,11 +43,6 @@ public class Tracker {
                 result = true;
             }
         }
-        if(result == false) {
-            System.out.println("Заявок с таким id нет");
-        } else {
-            System.out.println("Заявка отредактирована");
-        }
         return result;
     }
 
@@ -66,11 +61,6 @@ public class Tracker {
                     result = true;
                     break;
             }
-        }
-        if(result == false) {
-            System.out.println("Заявок с таким id нет");
-        } else {
-            System.out.println("Заявка удалена");
         }
         return result;
     }

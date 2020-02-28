@@ -5,40 +5,42 @@ public class StartUI {
 
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
-        System.out.print("Enter name: ");
-        String name = input.askStr("");
+        String name = input.askStr("Введите имя ");
         Item item = new Item(name);
         tracker.add(item);
     }
 
     public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("== Редактирование заявки ==");
-        System.out.println("Введите имя новой заявки");
-        String name = input.askStr("");
+        String name = input.askStr("Введите имя новой заявки");
         Item item = new Item(name);
-        System.out.println("Укажите id заявки, которую хотите заменить ");
-        String id = input.askStr("");
-        tracker.replace(id, item);
+        String id = input.askStr("Укажите id заявки, которую хотите заменить");
+        if (tracker.replace(id, item)) {
+            System.out.println("Заявка отредактирована");
+        } else {
+            System.out.println("Заявок с таким id нет");
+        }
     }
 
     public static void deteleItem(Input input, Tracker tracker) {
         System.out.println("== Удаление заявки ==");
-        System.out.println("Укажите id заявки");
-        String id = input.askStr("");
-        tracker.delete(id);
+        String id = input.askStr("Укажите id заявки");
+        if (tracker.delete(id)) {
+            System.out.println("Заявка удалена");
+        } else {
+            System.out.println("Заявок с таким id нет");
+        }
     }
 
     public static void findByIdItem(Input input, Tracker tracker){
         System.out.println("== Найти заявку по id ==");
-        System.out.println("Укажите id заявки");
-        String id = input.askStr("");
+        String id = input.askStr("Укажите id заявки");
         tracker.findById(id);
     }
 
     public static void findByNameItem(Input input, Tracker tracker){
         System.out.println("== Найти заявки по имени ==");
-        System.out.println("Укажите name заявки");
-        String name = input.askStr("");
+        String name = input.askStr("Укажите name заявки");
         tracker.findByName(name);
     }
 
