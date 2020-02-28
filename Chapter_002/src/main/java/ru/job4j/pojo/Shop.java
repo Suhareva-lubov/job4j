@@ -4,7 +4,7 @@ public class Shop {
 
     public static Product[] delete(Product[] array, int index) {
         array[index] = null;
-        while(index < (array.length - 1)) {
+        while (index < (array.length - 1)) {
             array[index] = array[index + 1];
             index++;
         }
@@ -12,7 +12,7 @@ public class Shop {
     }
 
     public static void main(String[] args) {
-        Product products[] = new Product[5];
+        Product[] products = new Product[5];
         products[0] = new Product("Milk", 10);
         products[1] = new Product("Bread", 4);
         products[2] = new Product("Egg", 19);

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Tracker {
-    private Item [] items = new Item[100];
+    private Item[] items = new Item[100];
     private int position = 0;
 
     /**
@@ -36,7 +36,7 @@ public class Tracker {
      */
     public boolean replace(String id, Item item) {
         boolean result = false;
-        for(int index = 0; index < position; index++) {
+        for (int index = 0; index < position; index++) {
             if (this.items[index].getId().equals(id)) {
                 item.setId(id);
                 this.items[index] = item;
@@ -70,16 +70,16 @@ public class Tracker {
      * @return
      */
     public Item[] findAll() {
-        Item [] arr = new Item[this.items.length];
+        Item[] arr = new Item[this.items.length];
         int count = 0;
-        for(int index = 0; index < this.items.length; index++) {
+        for (int index = 0; index < this.items.length; index++) {
             if (this.items[index] != null) {
                 arr[count] = this.items[index];
                 count++;
             }
         }
-        Item [] result = Arrays.copyOf(arr, count);
-        if(result.length < 1) {
+        Item[] result = Arrays.copyOf(arr, count);
+        if (result.length < 1) {
             System.out.println("Заявок нет");
         } else {
             int num = 1;
@@ -100,16 +100,16 @@ public class Tracker {
         Item[] arr = new Item[this.items.length];
         int count = 0;
         for (int index = 0; index < arr.length; index++) {
-            if(this.items[index] != null) {
+            if (this.items[index] != null) {
                 if (this.items[index].getName().equals(key)) {
                     arr[count] = this.items[index];
                     count++;
                 }
             }
         }
-       Item [] result = Arrays.copyOf(arr, count);
+       Item[] result = Arrays.copyOf(arr, count);
 
-        if(result.length < 1) {
+        if (result.length < 1) {
             System.out.println("Заявок с таким именем нет");
         } else {
             for (int i = 0; i < result.length; i++) {
@@ -126,13 +126,13 @@ public class Tracker {
      */
     public Item findById(String id) {
         Item result = null;
-        for(int index = 0; index < position; index++) {
-            if(this.items[index].getId().equals(id)) {
+        for (int index = 0; index < position; index++) {
+            if (this.items[index].getId().equals(id)) {
                 result = this.items[index];
                 break;
             }
         }
-        if(result == null) {
+        if (result == null) {
             System.out.println("Заявок с таким id нет");
         } else {
             System.out.println("Имя заявки = " + result.getName() + "  id заявки = " + result.getId());

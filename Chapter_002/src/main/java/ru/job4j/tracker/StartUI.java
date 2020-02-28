@@ -32,19 +32,19 @@ public class StartUI {
         }
     }
 
-    public static void findByIdItem(Input input, Tracker tracker){
+    public static void findByIdItem(Input input, Tracker tracker) {
         System.out.println("== Найти заявку по id ==");
         String id = input.askStr("Укажите id заявки");
         tracker.findById(id);
     }
 
-    public static void findByNameItem(Input input, Tracker tracker){
+    public static void findByNameItem(Input input, Tracker tracker) {
         System.out.println("== Найти заявки по имени ==");
         String name = input.askStr("Укажите name заявки");
         tracker.findByName(name);
     }
 
-    public static void findAllItem(Input input, Tracker tracker){
+    public static void findAllItem(Input input, Tracker tracker) {
         System.out.println("==Список всех заявок==");
         tracker.findAll();
     }
