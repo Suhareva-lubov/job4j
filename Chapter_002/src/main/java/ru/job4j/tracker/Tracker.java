@@ -4,139 +4,128 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Tracker {
-    private Item[] items = new Item[100];
+
+    /**
+     * Массив для хранения заявок
+     */
+    private final Item[] items = new Item[100];
+
+    /**
+     * Указатель ячейки для новой заявки.
+     */
     private int position = 0;
 
     /**
-     * Добавление заявок
-     * @param item
-     * @return
+     * Метод добавления заявки в хранилище
+     * @param item новая заявка
      */
-    public void add(Item item) {
-        item.setId(this.generateId());
-        this.items[this.position++] = item;
-        System.out.println("Заявка добавлена");
+    public Item add(Item item) {
+        item.setId(generateId());
+        items[this.position++] = item;
+        return item;
     }
 
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
-     * @return
+     * @return Уникальный ключ.
      */
-    public String generateId() {
+    private String generateId() {
         Random rm = new Random();
         return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
 
     /**
-     * редактирование заявок
-     * @param id
-     * @param item
-     * @return
-     */
-    public boolean replace(String id, Item item) {
-        boolean result = false;
-        for (int index = 0; index < position; index++) {
-            if (this.items[index].getId().equals(id)) {
-                item.setId(id);
-                this.items[index] = item;
-                result = true;
-            }
-        }
-        return result;
-    }
-
-    /**
-     * удаление заявок
-     * @param id
-     * @return
-     */
-    public boolean delete(String id) {
-        boolean result = false;
-        for (int index = 0; index < position; index++) {
-            if (this.items[index].getId().equals(id)) {
-                    System.arraycopy(this.items, index + 1, this.items, (index), (this.items.length - index - 1));
-                    this.items[this.items.length - 1] = null;
-                    position--;
-                    result = true;
-                    break;
-            }
-        }
-        return result;
-    }
-
-    /**
-     * получение списка всех заявок
-     * @return
+     * Метод получения списка всех заявок, без null
+     * @return массив заявок
      */
     public Item[] findAll() {
-        Item[] arr = new Item[this.items.length];
+        Item[] arr = new Item[position];
         int count = 0;
-        for (int index = 0; index < this.items.length; index++) {
+        for (int index = 0; index < position; index++) {
             if (this.items[index] != null) {
-                arr[count] = this.items[index];
-                count++;
+                arr[count++] = this.items[index];
             }
         }
-        Item[] result = Arrays.copyOf(arr, count);
-        if (result.length < 1) {
-            System.out.println("Заявок нет");
-        } else {
-            int num = 1;
-            for (int index = 0; index < result.length; index++) {
-                System.out.println(num + ". Название заявки = " + result[index].getName() + "    id = " + result[index].getId());
-                num++;
-            }
-        }
-        return result;
+        return Arrays.copyOf(arr, count);
     }
 
     /**
-     * получение списка по имени
-     * @param key
-     * @return
+     * Метод получения списка заявок по имени
+     * @param key - имя заявки
      */
     public Item[] findByName(String key) {
-        Item[] arr = new Item[this.items.length];
+        Item[] arr = new Item[position];
         int count = 0;
-        for (int index = 0; index < arr.length; index++) {
+        for (int index = 0; index < position; index++) {
             if (this.items[index] != null) {
-                if (this.items[index].getName().equals(key)) {
-                    arr[count] = this.items[index];
-                    count++;
+                if (items[index].getName().equals(key)) {
+                    arr[count++] = this.items[index];
                 }
             }
         }
-       Item[] result = Arrays.copyOf(arr, count);
+        return Arrays.copyOf(arr, count);
+    }
 
-        if (result.length < 1) {
-            System.out.println("Заявок с таким именем нет");
-        } else {
-            for (int i = 0; i < result.length; i++) {
-                System.out.println("Имя заявки = " + result[i].getName() + "  id заявки = " + result[i].getId());
+    /**
+     * Получение заявки по Id
+     * @param
+     * @return
+     */
+    public Item findById(String id) {
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
+    /**
+     * метод, который будет возвращать index по id
+     * @param id
+     * @return
+     */
+    private int indexOf(String id) {
+        int rsl = -1;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
             }
+        }
+        return rsl;
+    }
+
+    /***
+     * Метод замены заявки.
+     * @param id id заявки, которую нужно изменить
+     * @param item новая заявка, которой заменим старую
+     * @return Правда - если смогли изменить, Ложь если нет.
+     */
+    public boolean replace(String id, Item item) {
+        boolean result = false;
+        int index = indexOf(id);
+        if (index != -1) {
+            item.setId(id);
+            items[index] = item;
+            result = true;
         }
         return result;
     }
 
     /**
-     * получение заявки по id
+     * Удаление заявок
      * @param id
      * @return
      */
-    public Item findById(String id) {
-        Item result = null;
-        for (int index = 0; index < position; index++) {
-            if (this.items[index].getId().equals(id)) {
-                result = this.items[index];
-                break;
-            }
-        }
-        if (result == null) {
-            System.out.println("Заявок с таким id нет");
-        } else {
-            System.out.println("Имя заявки = " + result.getName() + "  id заявки = " + result.getId());
+
+    public boolean delete(String id) {
+        boolean result = false;
+        int index = indexOf(id);
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, ((position -1) - index));
+            items[position - 1] = null;
+            position--;
+            result = true;
         }
         return result;
     }
+
 }
